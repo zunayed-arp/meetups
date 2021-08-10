@@ -12,13 +12,12 @@ def index(request):
 
 def meetup_details(request, meetup_slug):
     try:
-
         selected_meetup = Meetup.objects.get(slug=meetup_slug)
         return render(request, 'meetups/meetup-details.html', {
             'meetup_title': selected_meetup.title,
             'meetup_description': selected_meetup.description
         })
     except Exception as exc:
-        return render(request, 'meetups/meetup-details.html',{
+        return render(request, 'meetups/meetup-details.html', {
             'meet_found': False
         })
