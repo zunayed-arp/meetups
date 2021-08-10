@@ -15,8 +15,9 @@
 {% endblock %}
 
 {% block body %}
-      <article>
-        <img src="" alt="">
+    {% if meetup_found %}
+          <article>
+        <img src="{{ image }}" alt="{{ title }}">
         <section id="location">
             <h2>Meetup Location</h2>
             <address>This meetup takes place in <span>LOCATION</span> (ADDRESS). </address>
@@ -35,6 +36,10 @@
             FORM
         </section>
     </article>
+    {% else %}
+        <p>No meetup found for this slug, sorry!!</p>
+    {% endif %}
+
 
 {% endblock %}
 
